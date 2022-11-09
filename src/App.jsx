@@ -72,15 +72,10 @@ function App() {
        return <p>{itemMsgErro}</p>
      }) : ''}
      <form id="formulario" onSubmit={criaCard}>
-       <div className="divInputApp">
-        <label htmlFor="nome">nome</label>
+        <label htmlFor="nome" className='gridItem'>nome</label>
         <input id="texto" type="text" onChange={e=>setNome(e.target.value)} />
-       </div>
-       <div className="divInputApp">
         <label htmlFor="cor">cor</label>
         <input id="cor" type="cor" onChange={e=>setCor(e.target.value)}/>
-       </div>
-       
        <input id="btn" type="submit" value="Enviar"/>
      </form>
     </div>

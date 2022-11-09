@@ -21,15 +21,21 @@ body {
 }
 
 #formulario{
-  display: flex;
-  flex-direction: column;
-  vertical-align: center;
+  display: inline-grid;
+  grid-template-columns: auto auto;
   border: 25px;
   border-color: white;
 
-  input {
-    width:4rem;
-  }
+  
+}
+
+.gridItem {
+  text-align: left;
+}
+#btn {
+  width: 100%;
+  grid-row-start: 5;
+  grid-row-end: 6;
 }
 
 .divInputApp{
