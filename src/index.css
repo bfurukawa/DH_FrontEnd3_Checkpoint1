@@ -24,9 +24,12 @@ body {
   display: flex;
   flex-direction: column;
   vertical-align: center;
-  border-style:dotted;
   border: 25px;
   border-color: white;
+
+  input {
+    width:4rem;
+  }
 }
 
 .divInputApp{

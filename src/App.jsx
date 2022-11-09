@@ -39,7 +39,7 @@ function App() {
 
     //Resetamos a variavel booleana usada para identificad a presenca de erros
     //E resetamos a msg de erro a ser apresentada ao usuario
-     if(nome.length == 0 || (nome.length<=3) || (/\d/.test(nome))){
+     if(nome.length == 0 || (nome.length<3) || (/\d/.test(nome))){
        erroValidacao = true
        mensagemErro.push('O nome contem menos que 3 caracteres ou contem numeros')
       }
@@ -72,16 +72,16 @@ function App() {
        return <p>{itemMsgErro}</p>
      }) : ''}
      <form id="formulario" onSubmit={criaCard}>
-       <div>
+       <div className="divInputApp">
         <label htmlFor="nome">nome</label>
         <input id="texto" type="text" onChange={e=>setNome(e.target.value)} />
        </div>
-       <div>
+       <div className="divInputApp">
         <label htmlFor="cor">cor</label>
         <input id="cor" type="cor" onChange={e=>setCor(e.target.value)}/>
        </div>
        
-       <input id="btn" type="submit" />
+       <input id="btn" type="submit" value="Enviar"/>
      </form>
     </div>
     <div style={{
