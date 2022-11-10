@@ -41,7 +41,7 @@ function App() {
     //E resetamos a msg de erro a ser apresentada ao usuario
      if(nome.length == 0 || (nome.length<3) || (/\d/.test(nome))){
        erroValidacao = true
-       mensagemErro.push('O nome contem menos que 3 caracteres ou contem numeros')
+       mensagemErro.push('O nome contem menos que 3 caracteres ou contem numeros.')
       }
 
      if(tempCor.slice(0,1)!='#'){
@@ -49,8 +49,8 @@ function App() {
      }
      if(tempCor.slice(1).length<0 ||tempCor.slice(1).length<6 || !(/\d/.test(tempCor.slice(1)))){
         erroValidacao = true
-        mensagemErro.push('A cor deve ser apresentada no formato hexadecimal ex:#0000FF')
-        mensagemErro.push('A definicao da cor contem menos que 6 caracteres ou nao contem numeros')
+        mensagemErro.push('A cor deve ser apresentada no formato hexadecimal ex:#0000FF.')
+        mensagemErro.push('A definicao da cor contem menos que 6 caracteres ou nao contem numeros.')
       }
 
      if(!erroValidacao){
@@ -67,16 +67,16 @@ function App() {
   return (
     <>
     <div className="App">
-     <h1>Carga de estudiantes</h1>
+     <h1>Adicione uma cor</h1>
      {erroInput ? msgErro.map((itemMsgErro)=>{
-       return <p>{itemMsgErro}</p>
+       return <p className='msgErro'>{itemMsgErro}</p>
      }) : ''}
      <form id="formulario" onSubmit={criaCard}>
-        <label htmlFor="nome" className='gridItem'>nome</label>
-        <input id="texto" type="text" onChange={e=>setNome(e.target.value)} />
-        <label htmlFor="cor">cor</label>
-        <input id="cor" type="cor" onChange={e=>setCor(e.target.value)}/>
-       <input id="btn" type="submit" value="Enviar"/>
+        <label htmlFor="nome" className='gridItem'>Nome:</label>
+        <input id="texto" className={"textInput " +(erroInput ? 'erroValidacao' : '')} type="text" onChange={e=>setNome(e.target.value)} />
+        <label htmlFor="cor">Cor:</label>
+        <input id="cor" className={"textInput " +(erroInput ? 'erroValidacao' : '')} type="cor" onChange={e=>setCor(e.target.value)}/>
+       <input id="btn" type="submit" value="Adicionar"/>
      </form>
     </div>
     <div style={{

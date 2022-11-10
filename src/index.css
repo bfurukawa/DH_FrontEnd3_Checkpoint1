@@ -21,23 +21,61 @@ body {
 }
 
 #formulario{
+  width:50%;
   display: inline-grid;
-  grid-template-columns: auto auto;
+  padding: 15px;
+  margin: 10px;
+  border: 5px;
+  border-style: double;
+  border-color: white;
+  grid-template-columns: 3rem auto;
   border: 25px;
   border-color: white;
 
-  
+}
+
+#formulario input {
+  /* width: 150%; */
+  padding: 5px;
+  margin: 5px;
+  /* background-color: darkgray; */
+}
+
+#formulario label {
+  /* width:25%; */
+  size-adjust: auto;
+  padding:0;
+  margin:0;
+  font-size: smaller;
+  text-align: right;
+}
+
+.textInput {
+  background-color: darkgray;
+}
+.msgErro{
+  color: rgb(216, 19, 48);
+}
+
+.erroValidacao{
+  background-color: darkred;
+  color: white;
 }
 
 .gridItem {
   text-align: left;
 }
+
 #btn {
   width: 100%;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: rgb(21, 172, 21);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  border-style: none;
 }
-
 .divInputApp{
   border: 10px;
 }
